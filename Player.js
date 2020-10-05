@@ -11,7 +11,9 @@ class Player {
     var game = new GameState(gameState);
     const player = game.me();
     var score = player.score();
-    if ( score >= 10) {
+    if ( score == 20) {
+      bet(player.stack());
+    } else if ( score >= 10) {
       bet(100 + 90 * (score-10));
     } else {
       bet(0);
