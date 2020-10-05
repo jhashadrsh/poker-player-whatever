@@ -1,4 +1,5 @@
 const GameState = require('./src/GameState');
+const PlayerState = require('./src/PlayerState');
 
 class Player {
   static get VERSION() {
@@ -8,11 +9,13 @@ class Player {
   static betRequest(gameState, bet) {
     // if we have three of the same card, raise, otherwise meet
     var game = new GameState(gameState);
-    // const playerState = new PlayerState(Object.assign(gameState.me, {}));
-    // const x = {};
-    // console.dir(playerState);
-
-    bet(1);
+    const player = game.me();
+    var score = player.score();
+    if ( score >= 10) {
+      bet(100);
+    } else {
+      bet(0);
+    }
   }
 
   static showdown(gameState) {
