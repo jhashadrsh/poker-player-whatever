@@ -3,7 +3,7 @@ const PlayerState = require('./src/PlayerState');
 
 class Player {
   static get VERSION() {
-    return '0.1';
+    return '0.3';
   }
 
   static betRequest(gameState, bet) {
@@ -12,7 +12,7 @@ class Player {
     const player = game.me();
     var score = player.score();
     if ( score >= 10) {
-      bet(100);
+      bet(100 + 90 * (score-10));
     } else {
       bet(0);
     }
