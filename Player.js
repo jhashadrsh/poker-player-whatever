@@ -6,8 +6,13 @@ class Player {
   }
 
   static betRequest(gameState, bet) {
+    // if we have three of the same card, raise, otherwise meet
     var game = new GameState(gameState);
-    bet(0);
+    // const playerState = new PlayerState(Object.assign(gameState.me, {}));
+    // const x = {};
+    // console.dir(playerState);
+
+    bet(1);
   }
 
   static showdown(gameState) {
