@@ -14,7 +14,7 @@ class Player {
     if ( score == 20) {
       bet(player.stack());
     } else if ( score >= 10) {
-      bet(100 + 90 * (score-10));
+      bet(100);
     } else {
       bet(0);
     }
